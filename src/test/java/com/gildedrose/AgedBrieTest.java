@@ -15,8 +15,8 @@ class AgedBrieTest {
         Item[] items = new Item[] { new Item(ITEM_NAME, SELLIN, QUALITY) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(21, app.items[0].quality);
-        assertEquals(9, app.items[0].sellIn);
+        assertEquals(21, app.getExtendedItems()[0].getQuality());
+        assertEquals(9, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
@@ -26,8 +26,8 @@ class AgedBrieTest {
         for(int i=0;i< 5;i++) {
             app.updateQuality();
         }
-        assertEquals(25, app.items[0].quality);
-        assertEquals(5, app.items[0].sellIn);
+        assertEquals(25, app.getExtendedItems()[0].getQuality());
+        assertEquals(5, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
@@ -37,8 +37,8 @@ class AgedBrieTest {
         for(int i=0;i< SELLIN;i++) {
             app.updateQuality();
         }
-        assertEquals(30, app.items[0].quality);
-        assertEquals(0, app.items[0].sellIn);
+        assertEquals(30, app.getExtendedItems()[0].getQuality());
+        assertEquals(0, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
@@ -48,8 +48,8 @@ class AgedBrieTest {
         for(int i=0;i< SELLIN + 1;i++) {
             app.updateQuality();
         }
-        assertEquals(32, app.items[0].quality);
-        assertEquals(-1, app.items[0].sellIn);
+        assertEquals(32, app.getExtendedItems()[0].getQuality());
+        assertEquals(-1, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
@@ -59,8 +59,8 @@ class AgedBrieTest {
         for(int i=0;i< SELLIN + 5;i++) {
             app.updateQuality();
         }
-        assertEquals(40, app.items[0].quality);
-        assertEquals(-5, app.items[0].sellIn);
+        assertEquals(40, app.getExtendedItems()[0].getQuality());
+        assertEquals(-5, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
@@ -70,8 +70,8 @@ class AgedBrieTest {
         for(int i=0;i< SELLIN + 10;i++) {
             app.updateQuality();
         }
-        assertEquals(50, app.items[0].quality);
-        assertEquals(-10, app.items[0].sellIn);
+        assertEquals(50, app.getExtendedItems()[0].getQuality());
+        assertEquals(-10, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
@@ -81,7 +81,7 @@ class AgedBrieTest {
         for(int i=0;i< SELLIN + 20;i++) {
             app.updateQuality();
         }
-        assertEquals(50, app.items[0].quality);
-        assertEquals(-20, app.items[0].sellIn);
+        assertEquals(50, app.getExtendedItems()[0].getQuality());
+        assertEquals(-20, app.getExtendedItems()[0].getSellIn());
     }
 }

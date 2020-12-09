@@ -11,67 +11,67 @@ class SulfurasTest {
     private final int QUALITY = 80;
 
     @Test
-    void updateQualityAgedBrieAfter1DayTest() {
+    void updateQualitySulfurasAfter1DayTest() {
         Item[] items = new Item[] { new Item(ITEM_NAME, SELLIN, QUALITY) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(QUALITY, app.items[0].quality);
-        assertEquals(SELLIN, app.items[0].sellIn);
+        assertEquals(QUALITY, app.getExtendedItems()[0].getQuality());
+        assertEquals(SELLIN, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
-    void updateQualityAgedBrieAfter5DayTest() {
+    void updateQualitySulfurasAfter5DayTest() {
         Item[] items = new Item[] { new Item(ITEM_NAME, SELLIN, QUALITY) };
         GildedRose app = new GildedRose(items);
         for(int i=0;i< 5;i++) {
             app.updateQuality();
         }
-        assertEquals(QUALITY, app.items[0].quality);
-        assertEquals(SELLIN, app.items[0].sellIn);
+        assertEquals(QUALITY, app.getExtendedItems()[0].getQuality());
+        assertEquals(SELLIN, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
-    void updateQualityAgedBrieAtSellTimeTest() {
+    void updateQualitySulfurasAtSellTimeTest() {
         Item[] items = new Item[] { new Item(ITEM_NAME, SELLIN, QUALITY) };
         GildedRose app = new GildedRose(items);
         for(int i=0;i< SELLIN;i++) {
             app.updateQuality();
         }
-        assertEquals(QUALITY, app.items[0].quality);
-        assertEquals(SELLIN, app.items[0].sellIn);
+        assertEquals(QUALITY, app.getExtendedItems()[0].getQuality());
+        assertEquals(SELLIN, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
-    void updateQualityAgedBrieAfter1DaySellTimeTest() {
+    void updateQualitySulfurasAfter1DaySellTimeTest() {
         Item[] items = new Item[] { new Item(ITEM_NAME, SELLIN, QUALITY) };
         GildedRose app = new GildedRose(items);
         for(int i=0;i< SELLIN + 1;i++) {
             app.updateQuality();
         }
-        assertEquals(QUALITY, app.items[0].quality);
-        assertEquals(SELLIN, app.items[0].sellIn);
+        assertEquals(QUALITY, app.getExtendedItems()[0].getQuality());
+        assertEquals(SELLIN, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
-    void updateQualityAgedBrieAfter5DaySellTimeTest() {
+    void updateQualitySulfurasAfter5DaySellTimeTest() {
         Item[] items = new Item[] { new Item(ITEM_NAME, SELLIN, QUALITY) };
         GildedRose app = new GildedRose(items);
         for(int i=0;i< SELLIN + 5;i++) {
             app.updateQuality();
         }
-        assertEquals(QUALITY, app.items[0].quality);
-        assertEquals(SELLIN, app.items[0].sellIn);
+        assertEquals(QUALITY, app.getExtendedItems()[0].getQuality());
+        assertEquals(SELLIN, app.getExtendedItems()[0].getSellIn());
     }
 
     @Test
-    void updateQualityAgedBrieAfter10DaySellTimeTest() {
+    void updateQualitySulfurasAfter10DaySellTimeTest() {
         Item[] items = new Item[] { new Item(ITEM_NAME, SELLIN, QUALITY) };
         GildedRose app = new GildedRose(items);
         for(int i=0;i< SELLIN + 10;i++) {
             app.updateQuality();
         }
-        assertEquals(QUALITY, app.items[0].quality);
-        assertEquals(SELLIN, app.items[0].sellIn);
+        assertEquals(QUALITY, app.getExtendedItems()[0].getQuality());
+        assertEquals(SELLIN, app.getExtendedItems()[0].getSellIn());
     }
 
 }
